@@ -1,0 +1,39 @@
+{% extends 'base_u.html' %}
+{% block content %}
+<font size="+1" color="red">{{msg}}
+<center>
+</font>
+<h2>Change Password</h2>
+<br>
+
+<script>  
+function matchPassword() {  
+  var pw1 = document.getElementById("newpwd").value;  
+  var pw2 = document.getElementById("newpwd2").value;  
+  if(pw1 != pw2)  
+  {   
+    alert("Password and Confirm password are not matched");  
+	 return false;
+  } else {  
+ return true;
+  }  
+}  
+</script>  
+	
+<form class="w3-container" method="post" action="/updatepwd/">
+	{% csrf_token %} 
+<table width="50%">
+
+                    <tr><td><input class="w3-input"  type="password" name="newpwd" id="newpwd" placeholder="Enter New Password" required="required"   size="50"  ></input></td></tr>
+                    <tr><td><input class="w3-input"  type="password" name="newpwd2" id="newpwd2"  placeholder="Confirm Password" required="required"   size="50"  onblur="validate1()"></input></td></tr>
+                    <tr><td><input class="w3-input"  type="password" name="old" placeholder="Enter Current Password" required="required"  size="50"   onblur="validate3()"></input></td></tr>
+        
+
+      
+					<tr><td>
+					<button type = "submit" onclick="return matchPassword()">Submit</button>  
+                
+</table>
+</form>
+
+{% endblock %}

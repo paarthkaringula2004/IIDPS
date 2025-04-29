@@ -1,0 +1,23 @@
+{% extends 'base_a.html' %}
+{% block content %}
+
+<center>
+	<h2>Intrusions<br><br></h2>
+<table id="tab" width="100%" >
+<tr><th >Sno<th>Victim<th >Date & Time <th >Host Name<th >IP Address <th > Intruder (may be) 
+
+				{% for d in data %}
+	
+					<tr>
+			<td>	{{forloop.counter }}
+			<td>	{{d.user }}
+			<td>	{{d.datetime}}
+			<td>	{{d.hostaddr}}
+			<td>	{{d.ipaddr}}
+			<td>	{{d.intruder}}
+		
+			
+			
+			{% endfor %}
+			</table><br><br><br><br><br><br><br><br>
+{% endblock %}

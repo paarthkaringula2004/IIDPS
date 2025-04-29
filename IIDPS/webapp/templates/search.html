@@ -1,0 +1,21 @@
+{% extends 'base_u.html' %}
+{% block content %}
+<font size="+1" color="red">{{msg}}
+<center>
+</font>
+<h2>Search Data</h2>
+<br>
+
+
+	
+<form class="w3-container" method="post" action="/search/">
+	{% csrf_token %} 
+<table width="70%">
+
+
+                    <tr><td><input class="w3-input"  type="text" name="keys" placeholder="Search Keywords" required="required"   size="50"  onblur="validate1()"></input><td><input type="submit" class="w3-input" value="Search"  size="30"  >
+                
+</table>
+</form><br><br><br>&nbsp;<br><br><br><br><br><br>
+
+{% endblock %}

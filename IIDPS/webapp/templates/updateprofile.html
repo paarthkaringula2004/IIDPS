@@ -1,0 +1,29 @@
+{% extends 'base_u.html' %}
+{% block content %}
+
+<center>
+<h2>View Profile</h2>
+<br>
+<form method="post" action="/updateprofile/">
+{% csrf_token %}
+	<table id="tab" width="50%">
+<tr>
+	<th>Name</td>
+	<td><input type="text" class="w3-input"  name="name" value="{{ data.n_a_m_e }}"></td>
+</tr>
+<tr>
+	<th>Email</td>
+	<td><input type="text" class="w3-input" readonly name="email"  value="{{ data.e_mail }}"></td>
+</tr>
+<tr>
+	<th>Phone</td>
+	<td><input type="text" class="w3-input" name="phone" value="{{ data.phone }}"></td>
+</tr>
+<tr><th><td><input type="submit" value="Update" class="w3-input" >
+</tr>
+</table>
+</form>
+<br><br>
+
+<br><br>
+{% endblock %}

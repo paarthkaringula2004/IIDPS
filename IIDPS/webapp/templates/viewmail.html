@@ -1,0 +1,23 @@
+
+{% extends 'base_u.html' %}
+{% load static %}
+{% block content %}
+	<strong>{{msg}}</strong><center>
+
+	<h2>View Mail</h2><br><br>
+<table id="tab" width="90%" >
+
+
+					{% csrf_token %} 
+                    
+					<tr><th width="20%">From<td><h3>{{d.sendername}}	</h3>
+					{{d.sender}}	
+				<tr><th>Subject:<td><strong>{{d.title}}	</strong>
+				<tr><th>Body:<td>{{d.data}}
+			
+				
+				</form>
+
+
+			</table><br><br><br><br>
+{% endblock %}

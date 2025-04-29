@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+ <h2 class="w3ls_head">Admin Login Page</h2>  
+
+<font size="+1" color="red">{{msg}}
+</font>
+
+<form method="post" action="/a_loginaction/">
+	{% csrf_token %} 
+                    
+<h2>Admin
+</h2><br><br><br>
+<div class="w3layouts-main">
+
+			<input type="text"  class="w3-input" name="uid" placeholder="Enter USER ID" required="">
+			<input type="password" class="w3-input" name="pwd" placeholder="PASSWORD" required="">
+			
+				<input type="submit" value="Sign In" name="login"  class="w3-input">
+		</form>
+</div>
+
+</form>
+
+{% endblock %}
