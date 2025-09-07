@@ -1,0 +1,29 @@
+{% extends 'base_u.html' %}
+{% block content %}
+<font size="+1" color="red">{{msg}}
+<center>
+</font>
+<h2>File Upload</h2>
+<br>
+
+
+	
+<form class="w3-container" method="post" action="/fileupload/">
+	{% csrf_token %} 
+<table width="50%">
+
+                    <tr><td><strong>Select File</strong>
+					<input class="w3-input"  type="file" name="file" placeholder="Name" required="required"   size="50"  ></input></td></tr>
+                    <tr><td><input class="w3-input"  type="text" name="Title" placeholder="Enter Title of the file" required="required"   size="50"  onblur="validate1()"></input></td></tr>
+                    <tr><td>
+					<input type="radio" name="access" value="public"> Public
+					<input type="radio" name="access" value="private"> Private
+      
+	 
+
+					<tr><td><input type="submit" class="w3-input" value="Upload"  size="50"  >
+                
+</table>
+</form>
+
+{% endblock %}

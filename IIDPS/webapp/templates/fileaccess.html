@@ -1,0 +1,27 @@
+
+{% extends 'base_u.html' %}
+{% load static %}
+{% block content %}
+	<strong>{{msg}}</strong><center>
+	<h2>Update File Content</h2><br><br>
+<table id="tab" width="90%" >
+
+				<form method="post" action="/chgaccessaction/">
+					{% csrf_token %} 
+                    
+					<tr><th width="30%">Title<td>{{d.filetitle}}	
+				<tr><th>File Access is :<td>{{d.access}}	
+				<tr><th>Change File Access i:<td><select name="access">
+																						<option value="public" selected>Public
+																						<option value="private">Private
+																					</select>
+						<input type="hidden" name="fid" value="{{d.id}}">
+
+			<tr><th><td><input type="submit"  class="w3-input"  value="Update">
+			
+				
+				</form>
+
+
+			</table>
+{% endblock %}

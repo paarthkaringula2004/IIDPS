@@ -1,0 +1,29 @@
+{% extends 'base_u.html' %}
+{% block content %}
+
+<center>
+<h2>View Profile</h2>
+<br>
+<table id="tab" width="50%">
+<tr>
+	<th>Name</td>
+	<td>{{ data.n_a_m_e }}</td>
+</tr>
+<tr>
+	<th>Email</td>
+	<td>{{ data.e_mail }}</td>
+</tr>
+<tr>
+	<th>Phone</td>
+	<td>{{ data.phone}}</td>
+</tr>
+
+</tr>
+</table>
+<br><br>
+<a href="/updateprofile"><h3>Update Profile</h3></a>
+<a href="/updatepwd"><h3>Change Password</h3></a>
+
+
+<br><br>
+{% endblock %}

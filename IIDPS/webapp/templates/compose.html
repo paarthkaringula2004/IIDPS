@@ -1,0 +1,25 @@
+{% extends 'base_u.html' %}
+{% block content %}
+<font size="+1" color="red">{{msg}}
+<center>
+</font>
+<h2>New Mail</h2>
+<br>
+
+
+	
+<form class="w3-container" method="post" action="/newmail/">
+	{% csrf_token %} 
+<table width="70%">
+
+                    <tr><td><input class="w3-input"  type="email" name="t_o" placeholder="Recipient Email" required="required"   size="50"  ></input></td></tr>
+                    <tr><td><input class="w3-input"  type="text" name="sub" placeholder="Subject" required="required"   size="50"  onblur="validate1()"></input></td></tr>
+                    <tr><td><textarea name="body" rows="" cols="" class="w3-input"  placeholder="Message" required></textarea>
+	 
+
+					<tr><td><input type="submit" class="w3-input" value="Send"  size="50"  >
+                
+</table>
+</form>
+
+{% endblock %}
