@@ -2,18 +2,17 @@ import mimetypes
 import os
 
 from django.conf import settings
-from django.shortcuts import render
-from django.http import HttpResponse, request
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import *
 
-import matplotlib.pyplot as plt;
+import matplotlib.pyplot as plt
 import numpy as np
-import numpy
-from django.shortcuts import render, redirect
-from PIL import ImageTk, Image
+
 from PIL import Image
 
 from .DateTime import getdate
+
 
 def homepage(request):
 	return render(request, 'index.html')
