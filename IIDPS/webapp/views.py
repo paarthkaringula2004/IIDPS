@@ -201,6 +201,12 @@ def userlogoutdef(request):
         # Email subject
         subject = "Intrusion Alert"
 
+        from django.urls import reverse
+
+        itsme_url = request.build_absolute_uri(reverse('itsme', args=[aid]))
+        detection_url = request.build_absolute_uri(reverse('detection', args=[aid]))
+        
+
         body = f"""
         <!DOCTYPE html>
         <html lang="en">
@@ -301,8 +307,10 @@ def userlogoutdef(request):
                     If this was you, please confirm your activity:
                 </p>
 
+                
+
                 <div class="button" style="display: inline-block; margin: 0 10px 20px 0;">
-                    <a href="http://localhost:8000/itsme/{html.escape(aid)}/"
+                    <a href="{itsme_url}"
                     style="display: inline-block;
                             padding: 12px 20px;
                             background-color: #e74c3c;
@@ -316,7 +324,7 @@ def userlogoutdef(request):
                 </div>
 
                 <div class="button" style="display: inline-block;">
-                    <a href="http://localhost:8000/detection/{html.escape(aid)}/"
+                    <a href="{detection_url}"
                     style="display: inline-block;
                             padding: 12px 20px;
                             background-color: #e74c3c;
