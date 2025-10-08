@@ -80,7 +80,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'IIDPS.wsgi.application'
 
 
-# Database
+# Database 
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 # DATABASES = {
 #     'default': {
@@ -95,33 +95,13 @@ WSGI_APPLICATION = 'IIDPS.wsgi.application'
 
 import dj_database_url
 
-# Database
-# Use DATABASE_URL if provided (Render / Railway), otherwise fallback to local MySQL
-# if os.getenv("DATABASE_URL"):
-#     DATABASES = {
-#         'default': dj_database_url.config(
-#             default=os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/postgres")
-#         )
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': os.getenv("DB_NAME", "IIDPS"),
-#             'USER': os.getenv("DB_USER", "root"),
-#             'PASSWORD': os.getenv("DB_PASSWORD", "root"),
-#             'HOST': os.getenv("DB_HOST", "127.0.0.1"),
-#             'PORT': os.getenv("DB_PORT", "3306"),
-#         }
-#     }
-
 DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv("DATABASE_URL")  # Only use Railway DB
     )
 }
 
-print("✅ Connected to:", os.getenv("DATABASE_URL"))
+print("Connected to:", os.getenv("DATABASE_URL"))
 
 
 
